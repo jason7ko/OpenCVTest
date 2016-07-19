@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="openCVTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taC-DT-Dau">
+                                <rect key="frame" x="279" y="571" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lena" translatesAutoresizingMaskIntoConstraints="NO" id="LU6-DD-Rhs">
+                                <rect key="frame" x="125" y="105" width="350" height="325"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="325" id="vRF-mV-Q2d"/>
+                                    <constraint firstAttribute="width" constant="350" id="vjs-WJ-lbc"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJ0-8J-qSE">
+                                <rect key="frame" x="276" y="533" width="45" height="30"/>
+                                <state key="normal" title="to blur"/>
+                                <connections>
+                                    <action selector="toBlurButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JqY-7b-hhA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBu-Uc-0L0">
+                                <rect key="frame" x="172" y="533" width="86" height="30"/>
+                                <state key="normal" title="to grayScale"/>
+                                <connections>
+                                    <action selector="toGrayscaleButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WM2-p8-BAY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="taC-DT-Dau" firstAttribute="top" secondItem="RJ0-8J-qSE" secondAttribute="bottom" constant="8" symbolic="YES" id="26D-ik-VVI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="taC-DT-Dau" secondAttribute="bottom" constant="8" symbolic="YES" id="Aqa-ho-22Q"/>
+                            <constraint firstItem="RJ0-8J-qSE" firstAttribute="trailing" secondItem="taC-DT-Dau" secondAttribute="trailing" id="S4W-SW-6LH"/>
+                            <constraint firstItem="LBu-Uc-0L0" firstAttribute="baseline" secondItem="RJ0-8J-qSE" secondAttribute="baseline" id="Zg5-8h-zF4"/>
+                            <constraint firstItem="LU6-DD-Rhs" firstAttribute="centerX" secondItem="taC-DT-Dau" secondAttribute="centerX" id="lAy-h1-p7m"/>
+                            <constraint firstItem="LU6-DD-Rhs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="85" id="pLc-uY-yrh"/>
+                            <constraint firstItem="LU6-DD-Rhs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sqL-53-0ad"/>
+                            <constraint firstItem="RJ0-8J-qSE" firstAttribute="leading" secondItem="LBu-Uc-0L0" secondAttribute="trailing" constant="18" id="vhe-42-gIn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lenaImageView" destination="LU6-DD-Rhs" id="gjP-kX-IPO"/>
+                        <outlet property="openCVVersionLabel" destination="taC-DT-Dau" id="Ugk-TF-7UA"/>
+                        <outlet property="toGrayScaleButton" destination="LBu-Uc-0L0" id="Xfa-Os-LkG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="477"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lena" width="512" height="512"/>
+    </resources>
+</document>
